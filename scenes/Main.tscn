@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Player.gd" type="Script" id=1]
+
+[node name="Main" type="Spatial"]
+
+[node name="Player" type="KinematicBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Player"]
+mesh = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+shape = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 1.0
+height = 2.0
+
+[ext_resource path="res://scenes/Bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
